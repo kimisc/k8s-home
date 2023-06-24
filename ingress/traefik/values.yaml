@@ -1,0 +1,15 @@
+traefik:
+  globalArguments:
+    - "--global.checknewversion"
+
+  providers:
+    kubernetesIngress:
+      publishedService:
+        enabled: true
+
+  ingressRoute:
+    dashboard:
+      entryPoints: ["websecure"]
+      matchRule: Host(`traefik.homeserver.internal`)
+      tls:
+        secretName: traefik-cert
