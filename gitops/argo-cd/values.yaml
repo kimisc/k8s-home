@@ -9,3 +9,8 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+
+custom:
+  hostname: argocd.homeserver.internal
+  tls:
+    secretName: argocd-cert
