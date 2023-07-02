@@ -13,3 +13,9 @@ traefik:
       matchRule: Host(`traefik.homeserver.internal`)
       tls:
         secretName: traefik-cert
+
+routes:
+  argocd:
+    hostname: argocd.homeserver.internal
+    tls:
+      secretName: argocd-cert
