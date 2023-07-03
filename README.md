@@ -8,12 +8,13 @@ Get initial admin secret
 
 `kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd | base64 -d`
 
-## Adding secrets
+### Adding secrets
 
 Encrypt the secret using sops
 
 `sops -e my-resource.yaml > k8s-home/secrets/my-resource.enc.yaml`
 
+Add it to the `secrets/secret-generator.yaml` files section
 
 ### Misc commands
 
