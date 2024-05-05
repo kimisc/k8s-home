@@ -45,3 +45,7 @@ Trust the cert on local machine:
 Remove from trusted certs:
 
 `# trust anchor --remove server.pem`
+
+## Uninstall
+
+Run `/usr/local/bin/k3s-uninstall.sh`

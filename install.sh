@@ -10,12 +10,12 @@ curl -sfL https://get.k3s.io | sh -s - --node-name=homeserver.internal --disable
 # Required for secrets
 mkdir plugins/
 echo "install ksops..."
-curl -s -L https://github.com/viaduct-ai/kustomize-sops/releases/download/v4.2.1/ksops_4.2.1_Linux_x86_64.tar.gz | tar -xz -C ./plugins
+curl -s -L https://github.com/viaduct-ai/kustomize-sops/releases/download/v4.3.1/ksops_4.3.1_Linux_x86_64.tar.gz | tar -xz -C ./plugins
 sudo mv ./plugins/ksops /usr/local/bin
 
 # ksops dependency
 echo "install kustomize..."
-curl -s -L https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.1.0/kustomize_v5.1.0_linux_amd64.tar.gz | tar -xz -C ./plugins
+curl -s -L https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.1/kustomize_v5.4.1_linux_amd64.tar.gz | tar -xz -C ./plugins
 sudo mv ./plugins/kustomize /usr/local/bin
 rm -rf ./plugins
 
