@@ -1,0 +1,15 @@
+global:
+  postgresql:
+    auth:
+      existingSecret: postgresql-creds
+      secretKeys:
+        adminPasswordKey: admin
+        userPasswordKey: user
+        replicationPasswordKey: replication
+
+metrics:
+  # Default: false
+  enabled: false
+
+#persistence:
+  #existingClaim: ""
