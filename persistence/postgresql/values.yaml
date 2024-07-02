@@ -1,0 +1,11 @@
+global:
+  postgresql:
+    auth:
+      existingSecret: postgresql-creds
+      secretKeys:
+        adminPasswordKey: admin
+        userPasswordKey: user
+postgresqlDataDir: /mnt/postgresql/data
+metrics:
+  # Default: false
+  enabled: false
