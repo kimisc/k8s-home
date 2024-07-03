@@ -1,0 +1,16 @@
+kube-prometheus-stack:
+  defaultRules:
+    rules:
+      etcd: false
+      kubeEtcd: false
+      alertmanager: false
+      windows: false
+  ldap:
+    enabled: false
+  grafana:
+    admin:
+      existingSecret: "grafana-creds"
+      userKey: admin-user
+      passwordKey: admin-password
+  alertmanager:
+    enabled: false

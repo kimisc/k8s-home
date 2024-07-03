@@ -19,3 +19,7 @@ routes:
     hostname: argocd.homeserver.internal
     tls:
       secretName: argocd-cert
+  grafana:
+    hostname: grafana.homeserver.internal
+    tls:
+      secretName: grafana-cert
