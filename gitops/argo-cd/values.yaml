@@ -1,4 +1,7 @@
 argo-cd:
+  configs:
+    cm:
+      kustomize.buildOptions: "--enable-alpha-plugins --enable-exec"
   params:
     server.insecure: true
   dex:
@@ -7,7 +10,6 @@ argo-cd:
     extraArgs:
       - --insecure
     config:
-      kustomize.buildOptions: "--enable-alpha-plugins --enable-exec"
       repositories: |
         - type: helm
           name: argo-cd
