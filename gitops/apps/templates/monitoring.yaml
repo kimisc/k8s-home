@@ -9,7 +9,7 @@ spec:
     namespace: monitoring
   project: default
   source:
-    path: monitoring
+    path: monitoring/prometheus-stack
     repoURL: https://github.com/kimisc/k8s-home.git
     targetRevision: HEAD
     helm:
@@ -46,3 +46,31 @@ spec:
       selfHeal: true
     syncOptions:
       - Replace=true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  project: default
+  source:
+    path: monitoring/loki
+    repoURL: https://github.com/kimisc/k8s-home.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+      skipCrds: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+

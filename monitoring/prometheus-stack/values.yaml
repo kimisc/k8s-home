@@ -14,3 +14,4 @@ kube-prometheus-stack:
       passwordKey: admin-password
   alertmanager:
     enabled: false
+
