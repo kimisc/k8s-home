@@ -9,7 +9,7 @@ global:
 
 metrics:
   # Default: false
-  enabled: false
+  enabled: true
 
 #persistence:
   #existingClaim: ""
