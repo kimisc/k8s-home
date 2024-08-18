@@ -15,6 +15,15 @@ loki:
           period: 24h
         object_store: filesystem # we're storing on filesystem so there's no real persistence here.
         schema: v13
+    resources:
+      limits:
+        memory: 320Mi
+        cpu: 150m
+      requests:
+        memory: 224Mi
+        cpu: 50m
+  chunksCache:
+    allocatedMemory: 2048
   singleBinary:
     replicas: 1
   read:
