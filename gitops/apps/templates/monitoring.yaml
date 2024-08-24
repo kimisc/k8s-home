@@ -74,3 +74,29 @@ spec:
     syncOptions:
       - PruneLast=true
 
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: promtail
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  project: default
+  source:
+    path: monitoring/promtail
+    repoURL: https://github.com/kimisc/k8s-home.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+      skipCrds: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
